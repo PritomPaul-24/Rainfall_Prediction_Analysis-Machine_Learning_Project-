@@ -19,18 +19,23 @@ Models were evaluated using accuracy, precision, recall, F1 score, ROC AUC, conf
 
 - **Univariate Distribution and Outlier Analysis**  
   Histograms and boxplots were created using `sns.histplot` and `sns.boxplot` to visualize distributions and identify outliers in temperature and rainfall.
+<img width="954" height="703" alt="image" src="https://github.com/user-attachments/assets/e1b57931-4be5-40c6-92f7-28689fc7166b" />
 
 - **Bivariate Relationship with Regression**  
   Scatter plots with regression lines (using `sns.regplot` or `plt.scatter`) analyzed the linear relationship between temperature and rainfall.
+<img width="1051" height="672" alt="image" src="https://github.com/user-attachments/assets/d7c6157d-8127-48fb-99cd-639a5653ab31" />
 
 - **Multivariate and Seasonal Pattern Detection**  
   Pairplots colored by month (`sns.pairplot(hue='Month')`) helped detect seasonal variations and multivariate relationships.
+<img width="853" height="806" alt="image" src="https://github.com/user-attachments/assets/65e81c7d-b8a7-4570-91d4-891a2f298d46" />
 
 - **Time Series Trend Analysis**  
   Line plots (`plt.plot` or `sns.lineplot`) of average monthly rainfall over years visualized long-term trends and seasonality.
+<img width="940" height="705" alt="image" src="https://github.com/user-attachments/assets/91a5493e-7fb6-4c3a-b2b3-74f1f7cbdcee" />
 
 - **Feature Correlation Quantification**  
   A heatmap (`sns.heatmap`) of the correlation matrix identified the strength and direction of relationships between features.
+<img width="938" height="793" alt="image" src="https://github.com/user-attachments/assets/3c690e81-44ac-418e-96b8-e5203ca4b69a" />
 
 ### 2. Preprocessing
 
@@ -45,11 +50,42 @@ Models were evaluated using accuracy, precision, recall, F1 score, ROC AUC, conf
 - Features were scaled using `StandardScaler`.
 - SMOTE was applied on training data to address class imbalance synthetically.
 
-### 4. Model Training and Optimization
+## 4. Model Training and Optimization
 
-- Six classifiers were used: Logistic Regression, SVM, Random Forest, Gradient Boosting, KNN, and Neural Network (MLP).
-- Hyperparameters were optimized with `GridSearchCV` using cross-validation to ensure model generalization.
-- Models were trained on SMOTE-balanced data to improve recall and F1 scores on the minority class.
+The core of the project involved training and optimizing a diverse set of classifiers to learn the complex relationship between the weather features and the target rainfall class. This process ensured achieving the highest possible predictive accuracy.
+
+### 4.1. Defined Multiple Classifiers
+
+We selected six robust and varied machine learning algorithms to thoroughly explore the solution space for our binary classification problem. The models included:  
+- Linear/Kernel Methods: Logistic Regression and Support Vector Machine (SVM)  
+- Ensemble Methods: Random Forest and Gradient Boosting  
+- Distance-Based Method: K-Nearest Neighbors (KNN)  
+- Deep Learning: Neural Network (Multi-layer Perceptron)  
+
+### 4.2. Hyperparameter Tuning using GridSearchCV
+
+To ensure each model performed optimally, we utilized GridSearchCV with cross-validation on the training data.  
+- **Process:** GridSearchCV systematically explores a defined grid of hyperparameter combinations for each algorithm. Cross-validation (e.g., k-fold) validates the model on different data partitions to robustly estimate performance and identify the best parameters.  
+- **Goal:** Minimize the risk of sub-optimal parameters and significantly improve the model's ability to generalize to unseen data.
+
+### 4.3. Trained Optimized Models on SMOTE-Balanced Data
+
+The final, best-performing hyperparameter sets were used to train the models on the preprocessed data, balanced using SMOTE (Synthetic Minority Oversampling Technique).  
+- **SMOTE's Role:** By synthetically generating samples of the minority class, SMOTE mitigates class imbalance common in real-world datasets.  
+- **Impact on Performance:** Training on SMOTE-balanced data prevents bias toward the majority class, boosting Recall and F1 Score on the positive (high rainfall) class.
+
+### Visualization Attachment Points and Descriptions
+
+- **Visualization: ROC Curves Comparison**  
+  - *Placement:* Typically shown immediately after the training summary to illustrate the discriminatory power of the trained models.  
+  - *Description:* Plots True Positive Rate vs. False Positive Rate for all six classifiers and the ensemble model. Area Under the Curve (AUC) values (e.g., AUC = 0.99) quantify overall model quality, showing successful high-performance training.
+<img width="645" height="520" alt="image" src="https://github.com/user-attachments/assets/af0d7a13-0b52-42f0-861b-c45c3feb8ac9" />
+
+- **Visualization: Confusion Matrices Heatmaps**  
+  - *Placement:* Follows ROC curves for granular detail of prediction errors.  
+  - *Description:* Six heatmaps (one per model) display counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN) from the test set, illustrating how well each model predicts both high and low rainfall classes (e.g., low FN count in the SVM matrix).
+<img width="814" height="545" alt="image" src="https://github.com/user-attachments/assets/dd2c8992-0f7d-4536-8786-e511a551d6d3" />
+
 
 ### 5. Ensemble Model
 
