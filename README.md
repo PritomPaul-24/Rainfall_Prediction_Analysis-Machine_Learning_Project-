@@ -79,7 +79,8 @@ The final, best-performing hyperparameter sets were used to train the models on 
 - **Visualization: ROC Curves Comparison**  
   - *Placement:* Typically shown immediately after the training summary to illustrate the discriminatory power of the trained models.  
   - *Description:* Plots True Positive Rate vs. False Positive Rate for all six classifiers and the ensemble model. Area Under the Curve (AUC) values (e.g., AUC = 0.99) quantify overall model quality, showing successful high-performance training.
-<img width="645" height="520" alt="image" src="https://github.com/user-attachments/assets/af0d7a13-0b52-42f0-861b-c45c3feb8ac9" />
+<img width="1058" height="780" alt="image" src="https://github.com/user-attachments/assets/53d622dc-400c-4042-8bfd-b26e6ef292ec" />
+
 
 - **Visualization: Confusion Matrices Heatmaps**  
   - *Placement:* Follows ROC curves for granular detail of prediction errors.  
