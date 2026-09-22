@@ -2,7 +2,7 @@
 
 This project is a machine learning-based rainfall prediction analysis built from historical temperature, month, year, and rainfall data. The entire project workflow includes data exploration, preprocessing, feature engineering, model training, tuning, and evaluation using various classification algorithms.
 
-## Project Description Summary
+## Summary
 
 The goal is to classify rainfall intensity into classes based on weather features, primarily temperature, month, and year. The dataset was explored visually and statistically to understand its distribution, correlation, and trends over time. Outliers and skewness in rainfall data were treated with capping and log transformation. The target variable was converted into a binary class based on median rainfall.
 
